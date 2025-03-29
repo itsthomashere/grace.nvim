@@ -74,7 +74,7 @@ local theme = lush(function(injected_functions)
 		PmenuSbar({ fg = new_palate.white2, bg = new_palate.white1 }), -- Popup menu: Scrollbar.
 		PmenuThumb({ bg = new_palate.white2 }), -- Popup menu: Thumb of the scrollbar.
 		-- Question       { }, -- |hit-enter| prompt and yes/no questions
-		-- QuickFixLine   { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		QuickFixLine({ fg = new_palate.magneta1, bg = new_palate.white1 }), -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search({ bg = new_palate.yellow1, fg = new_palate.black1 }), -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
 		-- SpecialKey     { }, -- Unprintable characters: text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
 		-- SpellBad       { }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.

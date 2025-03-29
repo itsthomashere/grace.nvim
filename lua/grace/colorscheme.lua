@@ -89,6 +89,7 @@ local colors = {
 	PmenuKindSel = { link = "PmenuSel" },
 	PmenuThumb = { bg = "#DBDBDB" },
 	PreCondit = { fg = "#BB5FCE" },
+	QuickFixLine = { fg = "#BB5FCE", bg = "#36454F" },
 	Repeat = { fg = "#D99059", italic = true },
 	Search = { fg = "#333333", bg = "#D99059" },
 	SignColumn = { fg = "#DBDBDB", bg = "#36454F" },
