@@ -261,6 +261,8 @@ local theme = lush(function(injected_functions)
 		MiniDiffSignAdd({ fg = new_palate.green2 }),
 		MiniDiffSignChange({ fg = new_palate.cyan1 }),
 		MiniDiffSignDelete({ fg = new_palate.red1 }),
+
+		-- Mini.statusline
 		MiniStatuslineModeNormal({ bg = new_palate.green1, fg = new_palate.bg }),
 		MiniStatuslineModeInsert({ bg = new_palate.black1, fg = new_palate.white2 }),
 		MiniStatuslineModeVisual({ bg = new_palate.magneta1, fg = new_palate.fg }),
@@ -268,6 +270,20 @@ local theme = lush(function(injected_functions)
 		MiniStatuslineModeCommand({ bg = new_palate.cyan1, fg = new_palate.black1 }),
 		MiniStatuslineFilename({ bg = new_palate.black1, fg = new_palate.white2 }),
 		MiniStatuslineDevinfo({ bg = new_palate.black2 }),
+		
+		--Mini.file
+		MiniFilesBorder({bg = "none", fg = new_palate.white2 }),
+		MiniFilesNormal({bg = "none", fg = new_palate.white2 }),
+		MiniFilesCursorLine({bg = "none" , fg = new_palate.magneta1 }),
+		MiniFilesFile({bg = "none", fg = new_palate.white2 }),
+		MiniFilesDirectory({bg = "none", fg = new_palate.white2 }),
+		MiniFilesTitle({ bg = "none", fg = new_palate.white2 }),
+		MiniFilesTitleFocused({bg = new_palate.yellow2, fg = new_palate.bg }),
+		--Mini.notify
+		MiniNotifyBorder({bg = "none", fg = new_palate.white2 }),
+		MiniNotifyLspProgress({ bg = "none", fg = new_palate.white2 }),
+		MiniNotifyNormal({bg = "none", fg = new_palate.white2 }),
+		MiniNotifyTitle({bg = "none", fg = new_palate.white2})
 	}
 end)
 
