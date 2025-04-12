@@ -93,8 +93,8 @@ local theme = lush(function(injected_functions)
 		-- Whitespace     { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		-- Winseparator   { }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
 		-- WildMenu       { }, -- Current match in 'wildmenu' completion
-		-- WinBar         { }, -- Window bar of current window
-		-- WinBarNC       { }, -- Window bar of not-current windows
+		WinBar({ bg = new_palate.white1, fg = new_palate.fg }), -- Window bar of current window
+		WinBarNC({ bg = new_palate.bg, fg = new_palate.white1 }), -- Window bar of not-current windows
 
 		-- Common vim syntax groups used for all kinds of code and markup.
 		-- Commented-out groups should chain up to their preferred (*) group

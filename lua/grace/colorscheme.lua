@@ -127,6 +127,8 @@ local colors = {
 	Underlined = { underline = true },
 	Visual = { fg = "#DBDBDB", bg = "#333333" },
 	WarningMsg = { fg = "#F0C775" },
+	WinBar = { fg = "#FAF0E5", bg = "#36454F" },
+	WinBarNC = { fg = "#36454F", bg = "#131211" },
 	["@character"] = { fg = "#BB5FCE" },
 	["@character.special"] = {},
 	["@comment"] = { fg = "#808080" },
