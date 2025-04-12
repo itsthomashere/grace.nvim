@@ -153,9 +153,9 @@ local theme = lush(function(injected_functions)
 
 		-- See :h lsp-highlight, some groups may not be listed, submit a PR fix to lush-template!
 		--
-		-- LspReferenceText            { } , -- Used for highlighting "text" references
-		-- LspReferenceRead            { } , -- Used for highlighting "read" references
-		-- LspReferenceWrite           { } , -- Used for highlighting "write" references
+		LspReferenceText({ gui = "underline" }), -- Used for highlighting "text" references
+		LspReferenceRead({ gui = "underline" }), -- Used for highlighting "read" references
+		LspReferenceWrite({ gui = "underline" }), -- Used for highlighting "write" references
 		-- LspCodeLens                 { } , -- Used to color the virtual text of the codelens. See |nvim_buf_set_extmark()|.
 		-- LspCodeLensSeparator        { } , -- Used to color the seperator between two or more code lens.
 		LspSignatureActiveParameter({ fg = new_palate.red1, bg = new_palate.white2 }), -- Used to highlight the active parameter in the signature help. See |vim.lsp.handlers.signature_help()|.
@@ -270,20 +270,20 @@ local theme = lush(function(injected_functions)
 		MiniStatuslineModeCommand({ bg = new_palate.cyan1, fg = new_palate.black1 }),
 		MiniStatuslineFilename({ bg = new_palate.black1, fg = new_palate.white2 }),
 		MiniStatuslineDevinfo({ bg = new_palate.black2 }),
-		
+
 		--Mini.file
-		MiniFilesBorder({bg = "none", fg = new_palate.white2 }),
-		MiniFilesNormal({bg = "none", fg = new_palate.white2 }),
-		MiniFilesCursorLine({bg = "none" , fg = new_palate.magneta1 }),
-		MiniFilesFile({bg = "none", fg = new_palate.white2 }),
-		MiniFilesDirectory({bg = "none", fg = new_palate.white2 }),
+		MiniFilesBorder({ bg = "none", fg = new_palate.white2 }),
+		MiniFilesNormal({ bg = "none", fg = new_palate.white2 }),
+		MiniFilesCursorLine({ bg = "none", fg = new_palate.magneta1 }),
+		MiniFilesFile({ bg = "none", fg = new_palate.white2 }),
+		MiniFilesDirectory({ bg = "none", fg = new_palate.white2 }),
 		MiniFilesTitle({ bg = "none", fg = new_palate.white2 }),
-		MiniFilesTitleFocused({bg = new_palate.yellow2, fg = new_palate.bg }),
+		MiniFilesTitleFocused({ bg = new_palate.yellow2, fg = new_palate.bg }),
 		--Mini.notify
-		MiniNotifyBorder({bg = "none", fg = new_palate.white2 }),
+		MiniNotifyBorder({ bg = "none", fg = new_palate.white2 }),
 		MiniNotifyLspProgress({ bg = "none", fg = new_palate.white2 }),
-		MiniNotifyNormal({bg = "none", fg = new_palate.white2 }),
-		MiniNotifyTitle({bg = "none", fg = new_palate.white2})
+		MiniNotifyNormal({ bg = "none", fg = new_palate.white2 }),
+		MiniNotifyTitle({ bg = "none", fg = new_palate.white2 }),
 	}
 end)
 
