@@ -172,6 +172,11 @@ local theme = lush(function(injected_functions)
 		DiagnosticVirtualTextInfo({ fg = new_palate.blue1 }), -- Used for "Info" diagnostic virtual text.
 		DiagnosticVirtualTextHint({ fg = new_palate.green2 }), -- Used for "Hint" diagnostic virtual text.
 		DiagnosticVirtualTextOk({ DiagnosticVirtualTextHint }), -- Used for "Ok" diagnostic virtual text.
+		DiagnosticVirtualLinesError({ fg = new_palate.red1 }), -- Used for "Error" diagnostic virtual text.
+		DiagnosticVirtualLinesWarn({ fg = new_palate.yellow2 }), -- Used for "Warn" diagnostic virtual text.
+		DiagnosticVirtualLinesInfo({ fg = new_palate.blue1 }), -- Used for "Info" diagnostic virtual text.
+		DiagnosticVirtualLinesHint({ fg = new_palate.green2 }), -- Used for "Hint" diagnostic virtual text.
+		DiagnosticVirtualLinesOk({ DiagnosticVirtualLinesHint }), -- Used for "Ok" diagnostic virtual text.
 		DiagnosticUnderlineError({ gui = "undercurl", sp = new_palate.red1 }), -- Used to underline "Error" diagnostics.
 		DiagnosticUnderlineWarn({ gui = "undercurl", sp = new_palate.yellow2 }), -- Used to underline "Warn" diagnostics.
 		DiagnosticUnderlineInfo({ gui = "undercurl", sp = new_palate.blue1 }), -- Used to underline "Info" diagnostics.
