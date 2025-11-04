@@ -59,7 +59,7 @@ local theme = lush(function(injected_functions)
 		-- MsgArea        { }, -- Area for messages and cmdline
 		MsgSeparator({ fg = new_palate.white1 }), -- Separator for scrolled messages, `msgsep` flag of 'display'
 		-- MoreMsg        { }, -- |more-prompt|
-		-- NonText({ fg = palate.inlined }), -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		NonText({ fg = new_palate.black2 }), -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal({ bg = new_palate.bg, fg = new_palate.fg }), -- Normal text
 		NormalFloat({ bg = new_palate.black1, fg = new_palate.fg }), -- Normal text in floating windows.
 		FloatBorder({ fg = new_palate.fg }), -- Border of floating windows.
@@ -104,41 +104,41 @@ local theme = lush(function(injected_functions)
 		--
 		-- Uncomment and edit if you want more specific syntax highlighting.
 
-		Comment({ fg = new_palate.black2 }), -- Any comment
+		Comment({ fg = new_palate.black2, gui = "bold italic" }), -- Any comment
 
-		Constant({ fg = new_palate.red2, gui = "bold" }), -- (*) Any constant
+		Constant({ fg = new_palate.fg, gui = "bold" }), -- (*) Any constant
 		String({ fg = new_palate.green2 }), --   A string constant: "this is a string"
-		Character({ fg = new_palate.magneta1 }), --   A character constant: 'c', '\n'
-		Number({ fg = new_palate.cyan2 }), --   A number constant: 234, 0xff
-		Boolean({ fg = new_palate.red2 }), --   A boolean constant: TRUE, false
-		Float({ fg = new_palate.cyan2 }), --   A floating point constant: 2.3e10
+		Character({ fg = new_palate.fg }), --   A character constant: 'c', '\n'
+		Number({ fg = new_palate.blue1 }), --   A number constant: 234, 0xff
+		Boolean({ fg = new_palate.fg }), --   A boolean constant: TRUE, false
+		Float({ fg = new_palate.fg }), --   A floating point constant: 2.3e10
 
 		Identifier({ Normal }), -- (*) Any variable name
 		Function({ fg = new_palate.yellow2 }), --   Function name (also: methods for classes)
 
-		Statement({ fg = new_palate.yellow1 }), -- (*) Any statement
-		Conditional({ fg = new_palate.yellow1, gui = "italic" }), --   if, then, else, endif, switch, etc.
-		Repeat({ fg = new_palate.yellow1, gui = "italic" }), --   for, do, while, etc.
-		Label({ fg = new_palate.magneta1 }), --   case, default, etc.
+		Statement({ fg = new_palate.fg }), -- (*) Any statement
+		Conditional({ fg = new_palate.fg, gui = "italic" }), --   if, then, else, endif, switch, etc.
+		Repeat({ fg = new_palate.fg, gui = "italic" }), --   for, do, while, etc.
+		Label({ fg = new_palate.fg }), --   case, default, etc.
 		Operator({ Normal }), --   "sizeof", "+", "*", etc.
 		Keyword({ fg = new_palate.red2, gui = "italic" }), --   any other keyword
 		Exception({ Conditional }), --   try, catch, throw
 
 		PreProc({ Label }), -- (*) Generic Preprocessor
-		Include({ fg = new_palate.magneta1 }), --   Preprocessor #include
+		Include({ fg = new_palate.fg }), --   Preprocessor #include
 		Define({ Include }), --   Preprocessor #define
 		Macro({ fg = new_palate.red1 }), --   Same as Define
-		PreCondit({ fg = new_palate.magneta1 }), --   Preprocessor #if, #else, #endif, etc.
+		PreCondit({ fg = new_palate.fg }), --   Preprocessor #if, #else, #endif, etc.
 
-		Type({ fg = new_palate.yellow1 }), -- (*) int, long, char, etc.
-		StorageClass({ fg = new_palate.red2 }), --   static, register, volatile, etc.
-		Structure({ fg = new_palate.yellow1 }), --   struct, union, enum, etc.
-		Typedef({ fg = new_palate.magneta1 }), --   A typedef
+		Type({ fg = new_palate.fg }), -- (*) int, long, char, etc.
+		StorageClass({ fg = new_palate.red1 }), --   static, register, volatile, etc.
+		Structure({ fg = new_palate.fg }), --   struct, union, enum, etc.
+		Typedef({ fg = new_palate.fg }), --   A typedef
 
-		Special({ fg = new_palate.cyan2 }), -- (*) Any special symbol
-		SpecialChar({ fg = new_palate.yellow1 }), --   Special character in a constant
-		Tag({ fg = new_palate.red1 }), --   You can use CTRL-] on this
-		Delimiter({ fg = new_palate.red2 }), --   Character that needs attention
+		Special({ fg = new_palate.fg }), -- (*) Any special symbol
+		SpecialChar({ fg = new_palate.magneta1 }), --   Special character in a constant
+		Tag({ fg = new_palate.fg }), --   You can use CTRL-] on this
+		Delimiter({ fg = new_palate.fg }), --   Character that needs attention
 		SpecialComment({ fg = new_palate.green1 }), --   Special things inside a comment (e.g. '\n')
 		Debug({ Normal }), --   Debugging statements
 
@@ -209,6 +209,7 @@ local theme = lush(function(injected_functions)
 		-- sym'@text.literal'
 		--
 		-- For more information see https://github.com/rktjmp/lush.nvim/issues/109
+
 		sym("@diff.plus")({ fg = new_palate.green2 }),
 		sym("@diff.minus")({ fg = new_palate.red1 }),
 		sym("@diff.delta")({ fg = new_palate.cyan1 }),
@@ -219,47 +220,47 @@ local theme = lush(function(injected_functions)
 		-- sym("@text.uri")({ fg = palate.fg }), -- Underlined
 		-- sym("@text.underline")({ fg = palate.fg }), -- Underlined
 		-- sym("@text.todo")({ bg = palate.blue, fg = palate.inlined_bg }), -- Todo
-		sym("@comment")({ fg = new_palate.black2 }), -- Comment
-		sym("@punctuation")({ fg = new_palate.red2 }), -- Delimiter
-		sym("@constant")({ fg = new_palate.red2 }), -- Constant
-		sym("@constant.builtin")({ fg = new_palate.red2 }), -- Special
-		sym("@constant.macro")({ fg = new_palate.red1 }), -- Define
+		sym("@comment")({ fg = new_palate.black2, gui = "bold italic" }), -- Comment
+		sym("@punctuation")({ fg = new_palate.fg }), -- Delimiter
+		sym("@constant")({ fg = new_palate.fg }), -- Constant
+		sym("@constant.builtin")({ fg = new_palate.fg }), -- Special
+		sym("@constant.macro")({ fg = new_palate.fg }), -- Define
 		sym("@define")({ fg = new_palate.magneta1 }), -- Define
 		sym("@macro")({ fg = new_palate.red1 }), -- Macro
 		sym("@string")({ fg = new_palate.green2 }), -- String
-		sym("@string.escape")({ fg = new_palate.yellow1 }), -- SpecialChar
-		sym("@string.special")({ fg = new_palate.yellow1 }), -- SpecialChar
-		sym("@character")({ fg = new_palate.magneta1 }), -- Character
-		sym("@character.special")({ fg = palate.yellow1 }), -- SpecialChar
+		sym("@string.escape")({ fg = new_palate.magneta1 }), -- SpecialChar
+		sym("@string.special")({ fg = new_palate.magneta1 }), -- SpecialChar
+		sym("@character")({ fg = new_palate.fg }), -- Character
+		sym("@character.special")({ fg = new_palate.magneta1 }), -- SpecialChar
 		sym("@number")({ Number }), -- Number
 		sym("@boolean")({ Boolean }), -- Boolean
 		sym("@float")({ Float }), -- Float
 		sym("@function")({ Function }), -- Function
-		sym("@function.builtin")({ fg = new_palate.red2 }), -- Special
+		sym("@function.builtin")({ fg = new_palate.fg }), -- Special
 		sym("@function.macro")({ fg = new_palate.red1 }), -- Macro
-		sym("@parameter")({ fg = new_palate.magneta2 }), -- Identifier
-		sym("@method")({ fg = new_palate.yellow2 }), -- Function
-		sym("@field")({ fg = new_palate.magneta2 }), -- Identifier
+		sym("@parameter")({ fg = new_palate.fg }), -- Identifier
+		sym("@method")({ fg = new_palate.fg }), -- Function
+		sym("@field")({ fg = new_palate.fg }), -- Identifier
 		sym("@property")({ fg = new_palate.fg }), -- Identifier
-		-- sym("@constructor")({ fg = palate.fg }), -- Special
-		-- sym("@conditional")({ fg = palate.fg }), -- Conditional
-		-- sym("@repeat")({ fg = palate.fg }), -- Repeat
-		-- sym("@label")({ fg = palate.fg }), -- Label
+		sym("@constructor")({ fg = new_palate.fg }), -- Special
+		sym("@conditional")({ fg = new_palate.fg }), -- Conditional
+		sym("@repeat")({ fg = new_palate.fg }), -- Repeat
+		sym("@label")({ fg = new_palate.green2, gui = "bold italic" }), -- Label
 		sym("@operator")({ fg = new_palate.fg }), -- Operator
 		sym("@keyword")({ fg = new_palate.red2 }), -- Keyword
-		sym("@exception")({ fg = new_palate.red2 }), -- Exception
+		sym("@exception")({ fg = new_palate.fg }), -- Exception
 		sym("@variable")({ fg = new_palate.fg }), -- Identifier
-		sym("@variable.member")({ fg = new_palate.cyan2 }), -- Identifier
-		sym("@variable.parameter")({ fg = new_palate.cyan2 }),
+		sym("@variable.member")({ fg = new_palate.fg }), -- Identifier
+		sym("@variable.parameter")({ fg = new_palate.fg }),
 		sym("@type")({ fg = new_palate.yellow1 }), -- Type
-		sym("@type.definition")({ fg = new_palate.red2 }), -- Typedef
-		-- sym("@storageclass")({ fg = palate.fg }), -- StorageClass
-		-- sym("@structure")({ fg = palate.fg }), -- Structure
-		sym("@namespace")({ fg = new_palate.red1 }), -- Identifier
-		sym("@include")({ fg = new_palate.red1 }), -- Include
-		sym("@preproc")({ fg = new_palate.yellow2 }), -- PreProc
-		sym("@debug")({ fg = new_palate.yellow2 }), -- Debug
-		-- sym("@tag")({ fg = palate.fg }), -- Tag
+		sym("@type.definition")({ fg = new_palate.red1 }), -- Typedef
+		sym("@storageclass")({ fg = new_palate.fg }), -- StorageClass
+		sym("@structure")({ fg = new_palate.fg }), -- Structure
+		sym("@namespace")({ fg = new_palate.fg }), -- Identifier
+		sym("@include")({ fg = new_palate.fg }), -- Include
+		sym("@preproc")({ fg = new_palate.fg }), -- PreProc
+		sym("@debug")({ fg = new_palate.fg }), -- Debug
+		sym("@tag")({ fg = new_palate.fg }), -- Tag
 
 		-- Mini.diff
 
