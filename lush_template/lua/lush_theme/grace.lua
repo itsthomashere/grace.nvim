@@ -106,7 +106,7 @@ local theme = lush(function(injected_functions)
 
 		Comment({ fg = new_palate.black2, gui = "bold italic" }), -- Any comment
 
-		Constant({ fg = new_palate.fg, gui = "bold" }), -- (*) Any constant
+		Constant({ fg = new_palate.red1, gui = "bold" }), -- (*) Any constant
 		String({ fg = new_palate.green2 }), --   A string constant: "this is a string"
 		Character({ fg = new_palate.fg }), --   A character constant: 'c', '\n'
 		Number({ fg = new_palate.blue1 }), --   A number constant: 234, 0xff
@@ -220,11 +220,11 @@ local theme = lush(function(injected_functions)
 		-- sym("@text.uri")({ fg = palate.fg }), -- Underlined
 		-- sym("@text.underline")({ fg = palate.fg }), -- Underlined
 		-- sym("@text.todo")({ bg = palate.blue, fg = palate.inlined_bg }), -- Todo
-		sym("@comment")({ fg = new_palate.black2, gui = "bold italic" }), -- Comment
+		sym("@comment")({ fg = new_palate.black2, gui = "bold" }), -- Comment
 		sym("@punctuation")({ fg = new_palate.fg }), -- Delimiter
-		sym("@constant")({ fg = new_palate.fg }), -- Constant
-		sym("@constant.builtin")({ fg = new_palate.fg }), -- Special
-		sym("@constant.macro")({ fg = new_palate.fg }), -- Define
+		sym("@constant")({ fg = new_palate.red2, gui = "bold italic" }), -- Constant
+		sym("@constant.builtin")({ fg = new_palate.red2 }), -- Special
+		sym("@constant.macro")({ fg = new_palate.red1 }), -- Define
 		sym("@define")({ fg = new_palate.magneta1 }), -- Define
 		sym("@macro")({ fg = new_palate.red1 }), -- Macro
 		sym("@string")({ fg = new_palate.green2 }), -- String
@@ -246,8 +246,8 @@ local theme = lush(function(injected_functions)
 		sym("@conditional")({ fg = new_palate.fg }), -- Conditional
 		sym("@repeat")({ fg = new_palate.fg }), -- Repeat
 		sym("@label")({ fg = new_palate.green2, gui = "bold italic" }), -- Label
-		sym("@operator")({ fg = new_palate.fg }), -- Operator
-		sym("@keyword")({ fg = new_palate.red2 }), -- Keyword
+		sym("@operator")({ fg = new_palate.green1 }), -- Operator
+		sym("@keyword")({ fg = new_palate.fg }), -- Keyword
 		sym("@exception")({ fg = new_palate.fg }), -- Exception
 		sym("@variable")({ fg = new_palate.fg }), -- Identifier
 		sym("@variable.member")({ fg = new_palate.fg }), -- Identifier
