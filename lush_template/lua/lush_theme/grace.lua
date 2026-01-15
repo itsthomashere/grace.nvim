@@ -263,7 +263,6 @@ local theme = lush(function(injected_functions)
 		sym("@tag")({ fg = new_palate.fg }), -- Tag
 
 		-- Mini.diff
-
 		MiniDiffSignAdd({ fg = new_palate.green2 }),
 		MiniDiffSignChange({ fg = new_palate.cyan1 }),
 		MiniDiffSignDelete({ fg = new_palate.red1 }),
@@ -290,6 +289,23 @@ local theme = lush(function(injected_functions)
 		MiniNotifyLspProgress({ bg = "none", fg = new_palate.white2 }),
 		MiniNotifyNormal({ bg = "none", fg = new_palate.white2 }),
 		MiniNotifyTitle({ bg = "none", fg = new_palate.white2 }),
+		-- Mini.pick
+		-- MiniPickBorder({}),
+		MiniPickBorderBusy({ fg = new_palate.red1 }),
+		-- MiniPickBorderText(),
+		-- MiniPickCursor(),
+		-- MiniPickIconDirectory(),
+		-- MiniPickIconFile(),
+		-- MiniPickHeader(),
+		MiniPickMatchCurrent({ fg = new_palate.magneta1, bg = "none" }),
+		MiniPickMatchMarked({ bg = new_palate.black1 }),
+		MiniPickMatchRanges({ fg = new_palate.green2 }),
+		MiniPickNormal({ bg = "none" }),
+		MiniPickPreviewLine({ bg = new_palate.black1 }),
+		-- MiniPickPreviewRegion(),
+		MiniPickPrompt({ bg = "none" }),
+		MiniPickPromptCaret({ fg = new_palate.cursor }),
+		MiniPickPromptPrefix({ fg = new_palate.red1 }),
 	}
 end)
 
